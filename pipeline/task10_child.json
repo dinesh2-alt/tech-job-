@@ -19,6 +19,11 @@
 				}
 			}
 		],
+		"parameters": {
+			"errormessage": {
+				"type": "string"
+			}
+		},
 		"annotations": []
 	}
 }
