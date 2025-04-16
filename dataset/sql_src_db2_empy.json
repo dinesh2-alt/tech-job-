@@ -1,0 +1,16 @@
+{
+	"name": "sql_src_db2_empy",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "sql_database2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "empy"
+		}
+	}
+}
