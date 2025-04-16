@@ -68,7 +68,7 @@
 				"derivedColumn1 aggregate(SAL = sum(SAL),",
 				"     partitionBy('hash', 1)) ~> aggregatesumsal",
 				"aggregatesumsal filter(ERROR_FUNCTION('')) ~> filter1",
-				"join1 derive(countdeptno = ERROR_FUNCTION('')) ~> derivedColumn1"
+				"join1 derive(countdeptno = count(SAL)) ~> derivedColumn1"
 			]
 		}
 	}
