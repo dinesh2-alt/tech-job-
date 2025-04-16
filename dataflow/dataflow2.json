@@ -65,10 +65,12 @@
 				"     ignoreSpaces: false,",
 				"     partitionBy('hash', 1),",
 				"     broadcast: 'auto')~> join1",
-				"derivedColumn1 aggregate(SAL = sum(SAL),",
+				"derivedColumn1 aggregate(groupBy(JOB,",
+				"          {} = ERROR_FUNCTION('')),",
+				"     SAL = sum(SAL),",
 				"     partitionBy('hash', 1)) ~> aggregatesumsal",
 				"aggregatesumsal filter(ERROR_FUNCTION('')) ~> filter1",
-				"join1 derive(enameupper = upper(ename),",
+				"join1 derive(enameupper = upper(ENAME),",
 				"     partitionBy('hash', 1)) ~> derivedColumn1"
 			]
 		}
