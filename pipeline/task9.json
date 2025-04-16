@@ -76,11 +76,15 @@
 									}
 								},
 								"sink": {
-									"type": "AzureSqlSink",
-									"writeBehavior": "insert",
-									"sqlWriterUseTableLock": false,
-									"tableOption": "autoCreate",
-									"disableMetricsCollection": false
+									"type": "DelimitedTextSink",
+									"storeSettings": {
+										"type": "AzureBlobStorageWriteSettings"
+									},
+									"formatSettings": {
+										"type": "DelimitedTextWriteSettings",
+										"quoteAllText": true,
+										"fileExtension": ".txt"
+									}
 								},
 								"enableStaging": false,
 								"translator": {
@@ -106,15 +110,8 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "ls_sqldb",
-									"type": "DatasetReference",
-									"parameters": {
-										"tbl_sch": "dbo",
-										"tbl_name": {
-											"value": "@item().name",
-											"type": "Expression"
-										}
-									}
+									"referenceName": "ds_cpy_src",
+									"type": "DatasetReference"
 								}
 							]
 						}
