@@ -104,7 +104,8 @@
 										"filename": {
 											"value": "@item().name",
 											"type": "Expression"
-										}
+										},
+										"src_container": "input"
 									}
 								}
 							],
