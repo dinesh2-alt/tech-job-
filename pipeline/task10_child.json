@@ -22,6 +22,9 @@
 		"parameters": {
 			"errormessage": {
 				"type": "string"
+			},
+			"pipelineparam": {
+				"type": "string"
 			}
 		},
 		"annotations": []

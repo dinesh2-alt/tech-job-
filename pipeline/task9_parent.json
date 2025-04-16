@@ -136,7 +136,13 @@
 									"referenceName": "task10_child",
 									"type": "PipelineReference"
 								},
-								"waitOnCompletion": true
+								"waitOnCompletion": true,
+								"parameters": {
+									"pipelineparam": {
+										"value": "@pipeline().Pipeline",
+										"type": "Expression"
+									}
+								}
 							}
 						}
 					]
