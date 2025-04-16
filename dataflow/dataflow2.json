@@ -62,7 +62,8 @@
 				"     ignoreSpaces: false,",
 				"     partitionBy('hash', 1),",
 				"     broadcast: 'auto')~> join1",
-				"derivedColumn1 filter(ERROR_FUNCTION('ENAME = __SINGLE_QUOTE__smith__SINGLE_QUOTE__')) ~> filter1",
+				"derivedColumn1 filter(ERROR_FUNCTION('ENAME = __SINGLE_QUOTE__smith__SINGLE_QUOTE__'),",
+				"     partitionBy('hash', 1)) ~> filter1",
 				"join1 derive(enameupper = upper(ENAME),",
 				"     partitionBy('hash', 1)) ~> derivedColumn1"
 			]
