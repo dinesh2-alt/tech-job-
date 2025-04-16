@@ -63,6 +63,7 @@
 				"     partitionBy('hash', 1),",
 				"     broadcast: 'auto')~> join1",
 				"join1 aggregate(SAL = sum(SAL),",
+				"          EMPNO = ERROR_FUNCTION(''),",
 				"     partitionBy('hash', 1)) ~> aggregatesumsal",
 				"aggregatesumsal filter(ERROR_FUNCTION('')) ~> filter1"
 			]
