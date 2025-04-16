@@ -138,6 +138,7 @@
 								},
 								"waitOnCompletion": true,
 								"parameters": {
+									"errormessage": "error meassage\n",
 									"pipelineparam": {
 										"value": "@pipeline().Pipeline",
 										"type": "Expression"
