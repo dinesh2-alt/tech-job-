@@ -26,6 +26,9 @@
 				},
 				{
 					"name": "aggregatesumsal"
+				},
+				{
+					"name": "filter1"
 				}
 			],
 			"scriptLines": [
@@ -59,7 +62,9 @@
 				"     ignoreSpaces: false,",
 				"     partitionBy('hash', 1),",
 				"     broadcast: 'auto')~> join1",
-				"join1 aggregate(SAL = ERROR_FUNCTION('')) ~> aggregatesumsal"
+				"join1 aggregate(SAL = sum(SAL),",
+				"     partitionBy('hash', 1)) ~> aggregatesumsal",
+				"aggregatesumsal filter(ERROR_FUNCTION('')) ~> filter1"
 			]
 		}
 	}
