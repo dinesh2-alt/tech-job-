@@ -29,6 +29,9 @@
 				},
 				{
 					"name": "filter1"
+				},
+				{
+					"name": "derivedColumn1"
 				}
 			],
 			"scriptLines": [
@@ -62,9 +65,10 @@
 				"     ignoreSpaces: false,",
 				"     partitionBy('hash', 1),",
 				"     broadcast: 'auto')~> join1",
-				"join1 aggregate(SAL = sum(SAL),",
+				"derivedColumn1 aggregate(SAL = sum(SAL),",
 				"     partitionBy('hash', 1)) ~> aggregatesumsal",
-				"aggregatesumsal filter(ERROR_FUNCTION('')) ~> filter1"
+				"aggregatesumsal filter(ERROR_FUNCTION('')) ~> filter1",
+				"join1 derive(countdeptno = ERROR_FUNCTION('')) ~> derivedColumn1"
 			]
 		}
 	}
