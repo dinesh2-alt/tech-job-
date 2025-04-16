@@ -5,8 +5,26 @@
 			"referenceName": "sql_database2",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"tbl_sch": {
+				"type": "string"
+			},
+			"tbl_name": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "AzureSqlTable",
-		"schema": []
+		"schema": [],
+		"typeProperties": {
+			"schema": {
+				"value": "@dataset().tbl_sch",
+				"type": "Expression"
+			},
+			"table": {
+				"value": "@dataset().tbl_name",
+				"type": "Expression"
+			}
+		}
 	}
 }
