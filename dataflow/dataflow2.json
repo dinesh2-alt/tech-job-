@@ -19,7 +19,15 @@
 					"name": "dept"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "AzureSqlTable1",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
 			"transformations": [
 				{
 					"name": "join1"
@@ -62,10 +70,21 @@
 				"     ignoreSpaces: false,",
 				"     partitionBy('hash', 1),",
 				"     broadcast: 'auto')~> join1",
-				"derivedColumn1 filter(ERROR_FUNCTION('ENAME = __SINGLE_QUOTE__smith__SINGLE_QUOTE__'),",
+				"derivedColumn1 filter(isNull(COMM),",
 				"     partitionBy('hash', 1)) ~> filter1",
 				"join1 derive(enameupper = upper(ENAME),",
-				"     partitionBy('hash', 1)) ~> derivedColumn1"
+				"     partitionBy('hash', 1)) ~> derivedColumn1",
+				"filter1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError',",
+				"     partitionBy('hash', 1)) ~> sink1"
 			]
 		}
 	}
