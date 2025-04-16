@@ -25,7 +25,7 @@
 					"name": "join1"
 				},
 				{
-					"name": "aggregate1"
+					"name": "aggregatesumsal"
 				}
 			],
 			"scriptLines": [
@@ -59,7 +59,7 @@
 				"     ignoreSpaces: false,",
 				"     partitionBy('hash', 1),",
 				"     broadcast: 'auto')~> join1",
-				"join1 aggregate() ~> aggregate1"
+				"join1 aggregate(SAL = ERROR_FUNCTION('')) ~> aggregatesumsal"
 			]
 		}
 	}
