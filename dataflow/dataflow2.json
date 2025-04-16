@@ -25,9 +25,6 @@
 					"name": "join1"
 				},
 				{
-					"name": "aggregatesumsal"
-				},
-				{
 					"name": "filter1"
 				},
 				{
@@ -65,10 +62,7 @@
 				"     ignoreSpaces: false,",
 				"     partitionBy('hash', 1),",
 				"     broadcast: 'auto')~> join1",
-				"derivedColumn1 aggregate(groupBy(JOB),",
-				"     SAL = sum(SAL),",
-				"     partitionBy('hash', 1)) ~> aggregatesumsal",
-				"aggregatesumsal filter(ERROR_FUNCTION('')) ~> filter1",
+				"derivedColumn1 filter(ERROR_FUNCTION('ENAME = __SINGLE_QUOTE__smith__SINGLE_QUOTE__')) ~> filter1",
 				"join1 derive(enameupper = upper(ENAME),",
 				"     partitionBy('hash', 1)) ~> derivedColumn1"
 			]
