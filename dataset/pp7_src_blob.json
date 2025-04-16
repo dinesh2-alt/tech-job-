@@ -22,7 +22,10 @@
 					"value": "@dataset().param_filename",
 					"type": "Expression"
 				},
-				"container": "input"
+				"container": {
+					"value": "@dataset().container",
+					"type": "Expression"
+				}
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",

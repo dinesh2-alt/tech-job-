@@ -98,7 +98,8 @@
 										"param_filename": {
 											"value": "@item().name",
 											"type": "Expression"
-										}
+										},
+										"container": "input"
 									}
 								}
 							],
