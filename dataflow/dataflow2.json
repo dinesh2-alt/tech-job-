@@ -50,9 +50,9 @@
 				"     validateSchema: false,",
 				"     isolationLevel: 'READ_UNCOMMITTED',",
 				"     format: 'table') ~> dept",
-				"empy, dept join(fuzzyCompare(DEPTNO, dept@DEPTNO, 80.00),",
+				"empy, dept join(DEPTNO == dept@DEPTNO,",
 				"     joinType:'inner',",
-				"     matchType:'fuzzy',",
+				"     matchType:'exact',",
 				"     ignoreSpaces: false,",
 				"     partitionBy('hash', 1),",
 				"     broadcast: 'auto')~> join1"
