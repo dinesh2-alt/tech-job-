@@ -1,0 +1,12 @@
+{
+	"name": "pp7_sink_sql",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "sql_database2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	}
+}
