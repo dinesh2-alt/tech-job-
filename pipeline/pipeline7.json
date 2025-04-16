@@ -68,6 +68,7 @@
 									"storeSettings": {
 										"type": "AzureBlobStorageReadSettings",
 										"recursive": true,
+										"wildcardFileName": "*.csv",
 										"enablePartitionDiscovery": false
 									},
 									"formatSettings": {
@@ -79,7 +80,13 @@
 							"inputs": [
 								{
 									"referenceName": "pp7_src_blob",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"param_filename": {
+											"value": "@item().name",
+											"type": "Expression"
+										}
+									}
 								}
 							]
 						}
