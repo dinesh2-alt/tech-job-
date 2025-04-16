@@ -73,6 +73,13 @@
 										"type": "BinaryReadSettings"
 									}
 								},
+								"sink": {
+									"type": "AzureSqlSink",
+									"writeBehavior": "insert",
+									"sqlWriterUseTableLock": false,
+									"tableOption": "autoCreate",
+									"disableMetricsCollection": false
+								},
 								"enableStaging": false
 							},
 							"inputs": [
@@ -85,6 +92,12 @@
 											"type": "Expression"
 										}
 									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "ls_sqldb",
+									"type": "DatasetReference"
 								}
 							]
 						}
