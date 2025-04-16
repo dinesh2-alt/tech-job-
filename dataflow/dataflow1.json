@@ -15,7 +15,7 @@
 			"sinks": [
 				{
 					"dataset": {
-						"referenceName": "dataflow_sql",
+						"referenceName": "dataflow_sink",
 						"type": "DatasetReference"
 					},
 					"name": "sink1"
