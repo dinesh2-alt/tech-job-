@@ -72,7 +72,6 @@
 											"value": "@item().name",
 											"type": "Expression"
 										},
-										"wildcardFileName": "*csv",
 										"enablePartitionDiscovery": false
 									},
 									"formatSettings": {
