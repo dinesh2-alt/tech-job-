@@ -50,10 +50,11 @@
 				"     validateSchema: false,",
 				"     isolationLevel: 'READ_UNCOMMITTED',",
 				"     format: 'table') ~> dept",
-				"empy, dept join(fuzzyCompare(ERROR_FUNCTION(''), dept@DEPTNO, 80.00),",
+				"empy, dept join(fuzzyCompare(DEPTNO, dept@DEPTNO, 80.00),",
 				"     joinType:'inner',",
 				"     matchType:'fuzzy',",
 				"     ignoreSpaces: false,",
+				"     partitionBy('hash', 1),",
 				"     broadcast: 'auto')~> join1"
 			]
 		}
