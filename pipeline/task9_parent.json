@@ -119,12 +119,23 @@
 						{
 							"name": "Execute Pipeline1",
 							"type": "ExecutePipeline",
-							"dependsOn": [],
+							"dependsOn": [
+								{
+									"activity": "Copy data1",
+									"dependencyConditions": [
+										"Failed"
+									]
+								}
+							],
 							"policy": {
 								"secureInput": false
 							},
 							"userProperties": [],
 							"typeProperties": {
+								"pipeline": {
+									"referenceName": "task10_child",
+									"type": "PipelineReference"
+								},
 								"waitOnCompletion": true
 							}
 						}
