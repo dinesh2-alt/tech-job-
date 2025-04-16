@@ -63,16 +63,6 @@
 							},
 							"userProperties": [],
 							"typeProperties": {
-								"source": {
-									"type": "BinarySource",
-									"storeSettings": {
-										"type": "AzureBlobStorageReadSettings",
-										"recursive": true
-									},
-									"formatSettings": {
-										"type": "BinaryReadSettings"
-									}
-								},
 								"sink": {
 									"type": "AzureSqlSink",
 									"writeBehavior": "insert",
@@ -82,18 +72,6 @@
 								},
 								"enableStaging": false
 							},
-							"inputs": [
-								{
-									"referenceName": "ds_cpy_src",
-									"type": "DatasetReference",
-									"parameters": {
-										"filename": {
-											"value": "@item().name",
-											"type": "Expression"
-										}
-									}
-								}
-							],
 							"outputs": [
 								{
 									"referenceName": "ls_sqldb",
