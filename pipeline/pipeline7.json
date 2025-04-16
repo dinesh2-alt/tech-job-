@@ -105,7 +105,14 @@
 							"outputs": [
 								{
 									"referenceName": "pp7_sink_sql",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"tbl_sch": "dbo",
+										"tbl_name": {
+											"value": "@item().name",
+											"type": "Expression"
+										}
+									}
 								}
 							]
 						}
