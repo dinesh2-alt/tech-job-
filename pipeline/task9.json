@@ -110,7 +110,7 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "ds_cpy_src",
+									"referenceName": "ds_cpy_sink",
 									"type": "DatasetReference"
 								}
 							]
