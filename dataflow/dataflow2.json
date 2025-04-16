@@ -50,7 +50,7 @@
 				"     validateSchema: false,",
 				"     isolationLevel: 'READ_UNCOMMITTED',",
 				"     format: 'table') ~> dept",
-				"empy, dept join(DEPTNO == dept@DEPTNO,",
+				"empy, dept join(ERROR_FUNCTION('') == dept@DEPTNO,",
 				"     joinType:'inner',",
 				"     matchType:'exact',",
 				"     ignoreSpaces: false,",
