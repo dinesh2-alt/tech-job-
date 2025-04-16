@@ -72,7 +72,7 @@
 											"value": "@item().name",
 											"type": "Expression"
 										},
-										"wildcardFileName": "csv",
+										"wildcardFileName": "*csv",
 										"enablePartitionDiscovery": false
 									},
 									"formatSettings": {
